@@ -14,4 +14,23 @@ public class SalesManager {
         }
         return max;
     }
+
+    public int min() {
+        int min = sales [0];
+        for (int sale : sales) {
+            if (sale < min) {
+                min = sale;
+            }
+        }
+        return min;
+    }
+
+    public int average () {
+        int sum = 0;
+        for (int sale : sales) {
+            sum += sale;
+        }
+        int average = (sum - max() - min())/(sales.length-2);
+        return average;
+    }
 }
